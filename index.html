@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profil Sekolah</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .profile-img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .profile-card {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .name {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .position {
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .scroll-box {
+      max-height: 400px;
+      overflow-y: auto;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .box-sejarah {
+      background-color: #ffeca0;
+    }
+
+    .box-visi,
+    .box-misi,
+    .box-program-sekolah {
+      background-color: #d0f0ff;
+      text-align: justify;
+    }
+
+    .box-tujuan-pendek,
+    .box-tujuan-panjang {
+      background-color: #ffeca0;
+      text-align: justify;
+    }
+
+    .section-title {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .scroll-container {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 10px;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .scroll-container {
+      border-radius: 10px;
+    }
+
+    .feature-box {
+      flex: 0 0 250px;
+      /* Lebar kotak */
+      height: 250px;
+      border-radius: 15px;
+      padding: 20px;
+      background-color: #e9f5ff;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      scroll-snap-align: center;
+    }
+
+    .feature-box img {
+      max-width: 60px;
+      margin-bottom: 15px;
+    }
+
+    /* Optional: efek hover */
+    .feature-box:hover {
+      transform: scale(1.05);
+      transition: 0.3s;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body class="p-5 bg-light">
+  <div class="container py-5">
+    <h2 class="text-center mb-5 fw-bold">SMPN 4 Petarukan</h2>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 profile-card">
+        <img src="img/Kevin Lius.jpg" alt="Kepala Sekolah" class="profile-img">
+        <div class="name">Sudiarto, S.Pd., M.Pd</div>
+        <div class="position">Kepala Sekolah</div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 profile-card">
+        <img src="img/maxx.jpg" alt="Bidang Kurikulum" class="profile-img">
+        <div class="name">Lia Fitriyanti</div>
+        <div class="position">Bidang Kurikulum</div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 profile-card">
+        <img src="img/maudi.jpg" alt="Bidang Kesiswaan" class="profile-img">
+        <div class="name">Tuti, S.Pd</div>
+        <div class="position">Bidang Kesiswaan</div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 profile-card">
+        <img src="img/maxx.jpg" alt="Bidang Sapras" class="profile-img">
+        <div class="name">Sutoro, S.Pd</div>
+        <div class="position">Bidang Sapras</div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 profile-card">
+        <img src="img/xavi.jpeg" alt="Humas" class="profile-img">
+        <div class="name">Sri Himatun, S.Pd</div>
+        <div class="position">Hubungan Masyarakat</div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 profile-card">
+        <img src="img/sand.jpeg" alt="Lab IPA" class="profile-img">
+        <div class="name">Bambang Wibowo, S.Pd</div>
+        <div class="position">Kepala Laboratorium IPA</div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 profile-card">
+        <img src="img/xavi.jpeg" alt="Perpustakaan" class="profile-img">
+        <div class="name">Hartini Septianagustin, S.Pd</div>
+        <div class="position">Kepala Perpustakaan</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="container">
+    <!-- Sejarah -->
+    <div class="mb-4 p-4 box-sejarah rounded">
+      <div class="section-title mb-2">Sejarah</div>
+      <p>SMP Negeri 4 Petarukan mulai berdiri dan mulai pembelajaran secara operasional pada tanggal 17 Juni 1992 dan
+        mulai mendapatkan SK pada tahun 1993.
+        SMP Negeri 4 Petarukan dibangun di Desa Panjunan karena lokasinya sangat strategis, yaitu dikelilingi desa-desa
+        yang berbeda kecamatan dan belum mempunyai SMP yang statusnya sekolah negeri, sehingga tiap tahunnya jumlah
+        pendaftar peserta didik baru melebihi kuota yang ada.</p>
+    </div>
+
+    <!-- Visi -->
+    <div class="mb-4 p-4 box-visi rounded text-center">
+      <div class="section-title">VISI</div>
+      <p>"CERDAS, TERAMPIL, BERPRESTASI DAN BERBUDI LUHUR"</p>
+    </div>
+
+    <!-- Grid Misi & Tujuan Pendek -->
+    <div class="row g-4">
+      <!-- Misi -->
+      <div class="col-md-6">
+        <div class="box-misi scroll-box">
+          <div class="section-title mb-2">MISI</div>
+          <ol>
+            <li>Menciptakan profil pelajar yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa: melalui berbagai
+              kegiatan keagamaan yang di selenggrakan sekolah.</li>
+            <li>Menciptakan pembelajaran yang berorientasi pada peserta didik yang menarik, menyenangkan dan berkarakter
+              yang mampu memfasilitasi pelajar sesuai bakat dan minatnya: memberikan kurikulum yang relevan dan inovatif
+              untuk mengembangkan pengetahuan dan keterampilan siswa: melalui program pembinaan karakter dan kegiatan
+              ekstrakurikuler yang mendukung.</li>
+            <li>Meningkatkan manajemen satuan pendidikan yang kolaboratif, adaftif, berkarakter, dan menjamin mutu:
+              melalui kegiatan yang meningkatkan kompetensi warga sekolah.</li>
+            <li>Menciptakan lingkungan sekolah sebagai tempat perkembangan intelektual, sosial, emosional, ketrampilan,
+              dan pengembangan budaya lokal dalam kebhinekaan global: melalui kegiatan yang menyertakan masyarakat
+              sekitar sekolah.</li>
+            <li>Menciptakan profil pelajar Pancasila yang berakhak mulia, mandiri, bernalar kritis dan kreatif sehingga
+              mampu mengreasi ide dan keterampilan yang inovatif: melalui berbagai kegiatan yang di selenggrakan sekolah
+              dan melalui kegiatan P5.</li>
+            <li>Menjamin hak belajar setiap anak tanpa terkecuali termasuk anak yang berkebutuhan khusus (inklusi) dalam
+              proses pembelajaran yang menjunjung tinggi nilai gotong-royong: memberikan hak yang sama kepada siswa.
+            </li>
+            <li>Menciptakan partisipasi aktif orang tua dan masyarakat dalam pembelajaran untuk mewadahi kreatifitas
+              peserta didik untuk menumbuhkan jiwa kompetitif: melalui kegiatan komite sekolah.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Tujuan Pendek -->
+      <div class="col-md-6">
+        <div class="box-tujuan-pendek scroll-box">
+          <div class="section-title mb-2">TUJUAN PENDEK</div>
+          <ul>
+            <li>Terwujudnya profil pelajar yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa: meningkatkan lulusan
+              yang mampu membaca al-Qu’an minimal 30 Juz dalam 3 tahun.</li>
+            <li>Terciptanya pembelajaran yang berorientasi pada peserta didik yang menarik, menyenangkan dan berkarakter
+              yang mampu memfasilitasi pelajar sesuai bakat dan minatnya: modul ajar atau RPP yang dibuat guru
+              berorientasi pada peserta didik.</li>
+            <li>Meningkatnya manajemen satuan pendidikan yang kolaboratif, adaftif, berkarakter, dan menjamin mutu:
+              mengadakan pelatihan dan workshop untuk meningkatkan keterampilan pedagogis guru dan manajemen sekolah
+              sebanyak 3 kali per tahun.</li>
+            <li>Terciptanya lingkungan sekolah sebagai tempat perkembangan intelektual, sosial, emosional, ketrampilan,
+              dan pengembangan budaya lokal dalam kebhinekaan global: tidak ada warga sekolah yang melanggar aturan.
+            </li>
+            <li>Menghasilkan lulusan yang mampu mengimplementasikan Profil Pelajar Pancasila dalam kehidupan nyata yang
+              berakhak mulia, mandiri, bernalar kritis dan kreatif sehingga mampu mengreasi ide dan keterampilan yang
+              inovatif: predikat karakter siswa minimal baik.</li>
+            <li>Menjamin hak belajar setiap anak tanpa terkecuali termasuk anak yang berkebutuhan khusus (inklusi) dalam
+              proses pembelajaran yang menjunjung tinggi nilai gotong-royong: memberikan hak yang sama kepada siswa:
+              tidak ada laporan dari orang tua atau pihak luar berkaitan dengan penggaran hak siswa.</li>
+            <li>g. Menciptakan partisipasi aktif orang tua dan masyarakat dalam pembelajaran untuk mewadahi kreatifitas
+              peserta didik untuk menumbuhkan jiwa kompetitif: meningkatkan partisipasi aktif orang tua dalam kegiatan
+              sekolah sesuai dengan kemampuannya.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tujuan Panjang -->
+    <div class="mt-4">
+      <div class="box-tujuan-panjang scroll-box">
+        <div class="section-title mb-2">TUJUAN PANJANG</div>
+        <ul>
+          <li>Merancang pembelajaran yang mengedepankan ciri khas sekolah dan daerah dalam nuansa kebinekaan global yang
+            harmonis.</li>
+          <li>Membentuk peserta didik yang memiliki kemampuan daya saing, berkarakter, berprestasi dan memiliki pribadi
+            yang beriman, rajin dan taat beribadah serta saling menghargai perbedaan dan mencintai lingkungan dan
+            bangsanya.</li>
+          <li>Menghasilkan lulusan yang mampu mengimplementasikan Profil Pelajar Pancasila dalam kehidupannya.</li>
+          <li>Menjadi pemimpin bagi diri dan temannya untuk menjadi pribadi yang bernalar kritis, tangguh, percaya diri
+            dan bangga dengan kegotong – royong.</li>
+          <li>Menguasai kecakapan dalam berkomunikasi sosial dan berjiwa kompetitif, kreatif dan mandiri yang tetap
+            menjunjung budaya lokal dan berwawasan lingkungan.</li>
+          <li>Mempunyai life skill yang mampu berdapatasi dengan perekembangan jaman.</li>
+          <li>Mampu mengkreasikan ide/ gagasan yang dituangkan dalam tindakan atau karya yang berakar dari budaya lokal
+            dalam kebhinekaan global.</li>
+          <li>Mempunyai karakter yang sopan, santun dan dan mandiri, kreatif yang mampu bersaing sesuai perkembangan
+            jaman.</li>
+          <li>Menjadikan sekolah yang memiliki sarana prasarana sekolah yang menunjang peseta didik dalam mengrkeasikan
+            ide/gagasan yang berakar pada nilai budaya lokal yang berwawasan lingkungan.</li>
+          <li>Menjadikan masyarakat dan orang tua sebagai mitra bersama dalam menjalankan penyelenggaraan pendidikan
+            sekolah.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-4">
+      <div class="box-program-sekolah scroll-box">
+        <div class="section-title mb-2">Program Sekolah</div>
+        <ul>
+          <li>Memiliki lulusan yang kreatif, tekun dan memiliki prestasi di bidang akademik maupun non akademik</li>
+          <li>Proses pembelajaran berjalan dengan efektif, berpihak pada peserta didik dengan tetap menerapkan disiplin
+            positif di kelas</li>
+          <li>Berkurangnya pelanggaran disiplin dan perilaku negatif di sekolah</li>
+          <li>Meningkatnya kemampuan peserta didik dalam hal Literasi dan Numerasi</li>
+          <li>Cakap menggunakan dan memanfaatkan teknologi dalam pembelajaran</li>
+          <li>Meningkatnya rasa kepedulian dan tanggung jawab sosial peserta didik terhadap lingkungan dan masyarakat.
+          </li>
+          <li>Terwujudnya budaya beriman, bertakwa kepada Tuhan Yang Maha Esa dan berakhlak mulia, Berkebhinekaan
+            global, bernalar kritis, kreatif, mandiri, gotong royong sesuai dengan Profil Pelajar Pancasila.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap Icons (wajib di <head> jika belum ada) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <div class="container my-5 position-relative">
+    <h2 class="text-center mb-4" data-aos="fade-down">Mengapa Memilih SN4PAN ?</h2>
+
+    <!-- Scroll Wrapper dengan posisi relatif -->
+    <div class="position-relative">
+
+      <!-- Tombol Panah KIRI -->
+      <button class="btn btn-secondary position-absolute top-50 start-0 translate-middle-y" id="scrollLeft"
+        style="z-index: 10; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+
+      <!-- Tombol Panah KANAN -->
+      <button class="btn btn-secondary position-absolute top-50 end-0 translate-middle-y" id="scrollRight"
+        style="z-index: 10; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+
+      <!-- Scrollable Content -->
+      <div class="overflow-hidden">
+        <div class="d-flex flex-nowrap scroll-container px-5" style="overflow-x: auto; scroll-behavior: smooth;">
+
+          <!-- FEATURE BOXES -->
+          <div class="feature-box text-center me-3" data-aos="fade-up">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Medali A" width="100">
+            <p>Terakreditasi A oleh Badan Akreditasi Nasional</p>
+          </div>
+
+          <div class="feature-box text-center me-3" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Lokasi Strategis" width="100">
+            <p>Letaknya yang strategis</p>
+          </div>
+
+          <div class="feature-box text-center me-3" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Track Record" width="100">
+            <p>Lahan luas untuk kegiatan pembelajaran siswa</p>
+          </div>
+
+          <div class="feature-box text-center me-3" data-aos="fade-up" data-aos-delay="300">
+            <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Fasilitas" width="100">
+            <p>Fasilitas lengkap mendukung kegiatan belajar dan ekstrakurikuler</p>
+          </div>
+
+          <div class="feature-box text-center me-3" data-aos="fade-up" data-aos-delay="400">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Alumni" width="100">
+            <p>Track record baik di berbagai kompetisi olahraga</p>
+          </div>
+
+          <div class="feature-box text-center me-3" data-aos="fade-up" data-aos-delay="500">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Guru" width="100">
+            <p>Guru-guru berkomitmen dan berkualitas tinggi</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Scroll -->
+  <script>
+    const scrollContainer = document.querySelector('.scroll-container');
+    const scrollAmount = 300;
+    document.getElementById('scrollLeft').addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+    document.getElementById('scrollRight').addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
